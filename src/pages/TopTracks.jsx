@@ -10,13 +10,12 @@ const TopTracks = () => {
     return (
         <>
             <h2>Top Tracks</h2>
-                Here are your top tracks:
-                <ul id="tracks" data-testid="tracks-list">
-                    {tracks.map((track) => (
-                        <li key={track.id}>{track.name}</li>
-                    ))}
-                </ul>
-            
+            Here are your top tracks:
+            <ul id="tracks" data-testid="tracks-list">
+                {tracks.map((track) => (
+                    <li key={track.id}>{track.name}, <span>{track.popularity}</span></li>
+                ))}
+            </ul>
         </>
     );
 };

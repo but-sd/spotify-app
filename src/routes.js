@@ -19,16 +19,13 @@ const routes = [
         path: "top-tracks",
         Component: TopTracks,
         loader: async () => {
-          const tracks = await getTopTracks();
-
-          console.log(tracks);
+          const tracks = await getTopTracks({ limit: 10 });
           return { tracks };
         },
       },
       {
         path: "about",
         Component: AboutPage
-
       }
     ],
   },
