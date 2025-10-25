@@ -1,6 +1,7 @@
 import { getTopTracks } from './api/tracks-api';
 import Layout from './Layout';
 import AboutPage from './pages/AboutPage';
+import HomePage from './pages/HomePage';
 import TopTracks from './pages/TopTracks';
 
 // routes of the application
@@ -13,13 +14,14 @@ const routes = [
       {
         path: "/",
         index: true,
-        Component: TopTracks
+        Component: HomePage
       },
       {
         path: "top-tracks",
         Component: TopTracks,
         loader: async () => {
           const tracks = await getTopTracks({ limit: 10 });
+          console.log("Loaded top tracks:", tracks);  
           return { tracks };
         },
       },
